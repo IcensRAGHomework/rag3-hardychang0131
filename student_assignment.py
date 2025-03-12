@@ -136,10 +136,11 @@ def demo(question):
         api_version = gpt_emb_config['api_version'],
         deployment_id = gpt_emb_config['deployment_name']
     )
+    
     collection = chroma_client.get_or_create_collection(
         name="TRAVEL",
         metadata={"hnsw:space": "cosine"},
         embedding_function=openai_ef
     )
-    
+     
     return collection
